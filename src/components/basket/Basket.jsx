@@ -60,7 +60,7 @@ const Basket = () => {
         isOpen={isOpenModal}
         onRequestClose={onCloseModal}
       >
-        <p className="text-center">You must sign in to continue checking out</p>
+        <p className="text-center">Necesitas loguearte para continuar comprando</p>
         <br />
         <div className="d-flex-center">
           <button
@@ -76,7 +76,7 @@ const Basket = () => {
             onClick={onSignInClick}
             type="button"
           >
-            Sign in to checkout
+            Inicia sesión para pagar
           </button>
         </div>
       </Modal>
@@ -113,7 +113,7 @@ const Basket = () => {
           </div>
           {basket.length <= 0 && (
             <div className="basket-empty">
-              <h5 className="basket-empty-msg">Your basket is empty</h5>
+              <h5 className="basket-empty-msg">Tu cestá está vacía</h5>
             </div>
           )}
           {basket.map((product, i) => (
@@ -128,7 +128,7 @@ const Basket = () => {
         </div>
         <div className="basket-checkout">
           <div className="basket-total">
-            <p className="basket-total-title">Subtotal Amout:</p>
+            <p className="basket-total-title">Monto Subtotal:</p>
             <h2 className="basket-total-amount">
               {displayMoney(calculateTotal(basket.map((product) => product.price * product.quantity)))}
             </h2>

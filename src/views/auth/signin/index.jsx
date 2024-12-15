@@ -29,7 +29,7 @@ const SignIn = ({ history }) => {
   const dispatch = useDispatch();
 
   useScrollTop();
-  useDocumentTitle('Sign In | Salinaka');
+  useDocumentTitle('Inicia sesión | Ployback');
 
   useEffect(() => () => {
     dispatch(setAuthStatus(null));
@@ -65,7 +65,7 @@ const SignIn = ({ history }) => {
           )}
           <div className={`auth ${authStatus?.message && (!authStatus?.success && 'input-error')}`}>
             <div className="auth-main">
-              <h3>Sign in to Salinaka</h3>
+              <h3>Inicia sesión</h3>
               <br />
               <div className="auth-wrapper">
                 <Formik
@@ -113,7 +113,7 @@ const SignIn = ({ history }) => {
                           disabled={isAuthenticating}
                           type="submit"
                         >
-                          {isAuthenticating ? 'Signing In' : 'Sign In'}
+                          {isAuthenticating ? 'Iniciando sesión' : 'Inicia sesión'}
                           &nbsp;
                           {isAuthenticating ? <LoadingOutlined /> : <ArrowRightOutlined />}
                         </button>
@@ -138,7 +138,7 @@ const SignIn = ({ history }) => {
               onClick={onSignUp}
               type="button"
             >
-              Sign Up
+              Regístrate
             </button>
           </div>
         </>

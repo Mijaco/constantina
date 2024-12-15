@@ -78,7 +78,7 @@ const UserNav = () => {
           onClick={() => dispatch(signOut())}
           role="presentation"
         >
-          Sign Out
+          Registrarse
           <LogoutOutlined />
         </h6>
       </div>

@@ -11,10 +11,10 @@ const ShippingForm = () => {
         <div className="checkout-fieldset">
           <div className="d-block checkout-field">
             <Field
-              name="fullname"
+              name="Nombre y apellido"
               type="text"
-              label="* Full Name"
-              placeholder="Enter your full name"
+              label="* Nombre y apellido"
+              placeholder="Ingresa tu nombre y apellido"
               component={CustomInput}
               style={{ textTransform: 'capitalize' }}
             />
