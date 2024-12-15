@@ -16,8 +16,8 @@ const EditForm = ({ isLoading, authProvider }) => {
         disabled={isLoading}
         name="fullname"
         type="text"
-        label="* Full Name"
-        placeholder="Enter your full name"
+        label="* Nombre completo"
+        placeholder="Ingresa tu nombre completo"
         component={CustomInput}
         style={{ textTransform: 'capitalize' }}
       />

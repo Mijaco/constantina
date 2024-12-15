@@ -14,9 +14,9 @@ import EditForm from './EditForm';
 
 const FormSchema = Yup.object().shape({
   fullname: Yup.string()
-    .min(4, 'Full name should be at least 4 characters.')
-    .max(60, 'Full name should be only be 4 characters long.')
-    .required('Full name is required'),
+    .min(4, 'Nombre y apellido debe contener al menos 4 caracteres.')
+    .max(60, 'Nombre y apellido debe contener al menos 4 caracteres')
+    .required('Nombre y apellidos son requeridos'),
   email: Yup.string()
     .email('Email is not valid.')
     .required('Email is required.'),
@@ -31,7 +31,7 @@ const FormSchema = Yup.object().shape({
 });
 
 const EditProfile = () => {
-  useDocumentTitle('Edit Account | Salinaka');
+  useDocumentTitle('Editar cuenta | Ployback');
   useScrollTop();
 
   const modal = useModal();
@@ -100,7 +100,7 @@ const EditProfile = () => {
   return (
     <Boundary>
       <div className="edit-user">
-        <h3 className="text-center">Edit Account Details</h3>
+        <h3 className="text-center">Editar cuenta - Detalles</h3>
         <Formik
           initialValues={initFormikValues}
           validateOnChange

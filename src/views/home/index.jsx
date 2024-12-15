@@ -8,6 +8,9 @@ import {
 import bannerImg from '@/images/banner-girl.png';
 import React from 'react';
 import { Link } from 'react-router-dom';
+//import { Navigation } from 'components/common';
+
+
 
 
 const Home = () => {
@@ -28,7 +31,9 @@ const Home = () => {
   } = useRecommendedProducts(6);
 
   return (
+    
     <main className="content">
+      
       <div className="home">
         <div className="banner">
           <div className="banner-desc">
@@ -50,8 +55,8 @@ const Home = () => {
         </div>
         <div className="display">
           <div className="display-header">
-            <h1>Featured Products</h1>
-            <Link to={FEATURED_PRODUCTS}>See All</Link>
+            <h1>Productos destacados</h1>
+            <Link to={FEATURED_PRODUCTS}>Ver todos</Link>
           </div>
           {(errorFeatured && !isLoadingFeatured) ? (
             <MessageDisplay
@@ -68,8 +73,8 @@ const Home = () => {
         </div>
         <div className="display">
           <div className="display-header">
-            <h1>Recommended Products</h1>
-            <Link to={RECOMMENDED_PRODUCTS}>See All</Link>
+            <h1>Productos recomendados</h1>
+            <Link to={RECOMMENDED_PRODUCTS}>Ver todos</Link>
           </div>
           {(errorRecommended && !isLoadingRecommended) ? (
             <MessageDisplay
@@ -85,6 +90,8 @@ const Home = () => {
           )}
         </div>
       </div>
+
+    
     </main>
   );
 };

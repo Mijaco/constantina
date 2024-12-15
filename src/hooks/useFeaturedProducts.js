@@ -17,7 +17,7 @@ const useFeaturedProducts = (itemsCount) => {
 
       if (docs.empty) {
         if (didMount) {
-          setError('No featured products found.');
+          setError('Productos destacados no encontrados');
           setLoading(false);
         }
       } else {
@@ -35,7 +35,7 @@ const useFeaturedProducts = (itemsCount) => {
       }
     } catch (e) {
       if (didMount) {
-        setError('Failed to fetch featured products');
+        setError('Error al buscar productos destacados');
         setLoading(false);
       }
     }

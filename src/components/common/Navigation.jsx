@@ -17,6 +17,9 @@ import SearchBar from './SearchBar';
 const Navigation = () => {
   const navbar = useRef(null);
   const { pathname } = useLocation();
+  const logoPath = import.meta.env.VITE_LOGO_PATH;
+
+  console.log('VITE_LOGO_PATH:', logoPath);
 
   const store = useSelector((state) => ({
     basketLength: state.basket.length,
@@ -69,7 +72,7 @@ const Navigation = () => {
   return (
     <nav className="navigation" ref={navbar}>
       <div className="logo">
-        <Link onClick={onClickLink} to="/"><img alt="Logo" src={logo} /></Link>
+        <Link onClick={onClickLink} to="/"><img alt="Logo" src={logoPath} /></Link>
       </div>
       <ul className="navigation-menu-main">
         <li><NavLink activeClassName="navigation-menu-active" exact to={ROUTE.HOME}>Home</NavLink></li>

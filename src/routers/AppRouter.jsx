@@ -14,6 +14,7 @@ import PublicRoute from './PublicRoute';
 export const history = createBrowserHistory();
 
 const AppRouter = () => (
+
   <Router history={history}>
     <>
       <Navigation />

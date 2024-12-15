@@ -46,21 +46,21 @@ const UserProfile = (props) => {
           {profile.address ? (
             <h5>{profile.address}</h5>
           ) : (
-            <h5 className="text-subtle text-italic">Address not set</h5>
+            <h5 className="text-subtle text-italic">Dirección no ingresada</h5>
           )}
           <span>Mobile</span>
           <br />
           {profile.mobile ? (
             <h5>{profile.mobile.value}</h5>
           ) : (
-            <h5 className="text-subtle text-italic">Mobile not set</h5>
+            <h5 className="text-subtle text-italic">Celular no ingresado</h5>
           )}
           <span>Date Joined</span>
           <br />
           {profile.dateJoined ? (
             <h5>{displayDate(profile.dateJoined)}</h5>
           ) : (
-            <h5 className="text-subtle text-italic">Not available</h5>
+            <h5 className="text-subtle text-italic">Fecha no disponible</h5>
           )}
         </div>
       </div>
