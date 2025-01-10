@@ -34,12 +34,16 @@ const Basket = () => {
   }, [basket.length]);
 
   const onCheckOut = () => {
-    if ((basket.length !== 0 && user)) {
+    
+    window.open('https://api.whatsapp.com/send?phone=51953247579&amp;text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus productos.', '_blank');
+ /*  //Se comenta porque checkout aun no esta disponible 
+     if ((basket.length !== 0 && user)) {
       document.body.classList.remove('is-basket-open');
       history.push(CHECKOUT_STEP_1);
     } else {
       onOpenModal();
     }
+      */
   };
 
   const onSignInClick = () => {
@@ -137,9 +141,11 @@ const Basket = () => {
             className="basket-checkout-button button"
             disabled={basket.length === 0 || pathname === '/checkout'}
             onClick={onCheckOut}
+            
             type="button"
+            
           >
-            Check Out
+            Check Ou
           </button>
         </div>
       </div>
