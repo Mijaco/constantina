@@ -20,8 +20,8 @@ const SignInSchema = Yup.object().shape({
     .min(8, 'Password length should be at least 8 characters.')
     .matches(/[A-Z\W]/g, 'Password should contain at least 1 uppercase letter.'),
   fullname: Yup.string()
-    .required('Nombre y apellido son necesarios.')
-    .min(4, 'Se requiere 4 caracteres al menos.')
+    .required('Full name is required.')
+    .min(4, 'Name should be at least 4 characters.')
 });
 
 const SignUp = ({ history }) => {
@@ -32,7 +32,7 @@ const SignUp = ({ history }) => {
   const dispatch = useDispatch();
 
   useScrollTop();
-  useDocumentTitle('Regístrate | Ployback');
+  useDocumentTitle('Sign Up | Salinaka');
 
   useEffect(() => () => {
     dispatch(setAuthStatus(null));
@@ -68,7 +68,7 @@ const SignUp = ({ history }) => {
           )}
           <div className={`auth ${authStatus?.message && (!authStatus?.success && 'input-error')}`}>
             <div className="auth-main">
-              <h3>Regístrate</h3>
+              <h3>Sign up to Salinaka</h3>
               <Formik
                 initialValues={{
                   fullname: '',
@@ -84,9 +84,9 @@ const SignUp = ({ history }) => {
                     <div className="auth-field">
                       <Field
                         disabled={isAuthenticating}
-                        name="Nombre y apellido"
+                        name="fullname"
                         type="text"
-                        label="* Nombre y apellido"
+                        label="* Full Name"
                         placeholder="John Doe"
                         style={{ textTransform: 'capitalize' }}
                         component={CustomInput}
@@ -119,7 +119,7 @@ const SignUp = ({ history }) => {
                         disabled={isAuthenticating}
                         type="submit"
                       >
-                        {isAuthenticating ? 'Registrando' : 'Regístrate'}
+                        {isAuthenticating ? 'Signing Up' : 'Sign Up'}
                         &nbsp;
                         {isAuthenticating ? <LoadingOutlined /> : <ArrowRightOutlined />}
                       </button>
@@ -135,7 +135,7 @@ const SignUp = ({ history }) => {
           </div>
           <div className="auth-message">
             <span className="auth-info">
-              <strong>Ya tienes una cuenta?</strong>
+              <strong>Already have an account?</strong>
             </span>
             <button
               className="button button-small button-border button-border-gray"
@@ -143,7 +143,7 @@ const SignUp = ({ history }) => {
               onClick={onClickSignIn}
               type="button"
             >
-              Iniciar sesión
+              Sign In
             </button>
           </div>
         </>

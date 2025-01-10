@@ -11,10 +11,10 @@ import { Link } from 'react-router-dom';
 //import { Navigation } from 'components/common';
 
 
-
+const businesstitle = 'Samay SAC';
 
 const Home = () => {
-  useDocumentTitle('Salinaka | Home');
+  useDocumentTitle(businesstitle);
   useScrollTop();
 
   const {
@@ -39,11 +39,11 @@ const Home = () => {
           <div className="banner-desc">
             <h1 className="text-thin">
               <strong>Full descuento</strong>
-              &nbsp;en el&nbsp;
-              <strong>Día de la Madre</strong>
+              &nbsp;en esta &nbsp;
+              <strong>Navidad</strong>
             </h1>
             <p>
-              Lleva las mejores carteras y billeteras de tus marcas favoritas, a descuento único, solo por la semana de la mamá
+              Lleva los mejores lentes oftalmológicos y gafas de sol de tus marcas favoritas, a descuento único, solo por la semana navideña
             </p>
             <br />
             <Link to={SHOP} className="button">

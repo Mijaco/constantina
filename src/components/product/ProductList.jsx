@@ -56,7 +56,7 @@ const ProductList = (props) => {
             onClick={fetchProducts}
             type="button"
           >
-            {isFetching ? 'Fetching Items...' : 'Show More Items'}
+            {isFetching ? 'Fetching Items...' : 'Muestra más productos'}
           </button>
         </div>
       )}
