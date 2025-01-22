@@ -31,7 +31,7 @@ const ProductsNavbar = (props) => {
         type="button"
       >
         <PlusOutlined />
-        &nbsp; Add New Product
+        &nbsp; Nuevo producto
       </button>
     </div>
   );

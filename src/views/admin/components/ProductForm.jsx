@@ -22,31 +22,31 @@ const brandOptions = [
 
 const FormSchema = Yup.object().shape({
   name: Yup.string()
-    .required('Product name is required.')
-    .max(60, 'Product name must only be less than 60 characters.'),
+    .required('El nombre del producto es obligatorio.')
+    .max(60, 'El nombre del producto debe tener menos de 60 caracteres.'),
   brand: Yup.string()
-    .required('Brand name is required.'),
+    .required('El nombre de la marca es obligatorio.'),
   price: Yup.number()
-    .positive('Price is invalid.')
-    .integer('Price should be an integer.')
-    .required('Price is required.'),
+    .positive('El precio no es válido.')
+    .integer('El precio debe ser un número entero.')
+    .required('El precio es obligatorio.'),
   description: Yup.string()
-    .required('Description is required.'),
+    .required('La descripción es obligatoria.'),
   maxQuantity: Yup.number()
-    .positive('Max quantity is invalid.')
-    .integer('Max quantity should be an integer.')
-    .required('Max quantity is required.'),
+    .positive('La cantidad máxima no es válida.')
+    .integer('La cantidad máxima debe ser un número entero.')
+    .required('La cantidad máxima es obligatoria.'),
   keywords: Yup.array()
     .of(Yup.string())
-    .min(1, 'Please enter at least 1 keyword for this product.'),
+    .min(1, 'Agrega al menos una palabra clave para este producto'),
   sizes: Yup.array()
     .of(Yup.number())
-    .min(1, 'Please enter a size for this product.'),
+    .min(1, 'Agrega un tamaño para este producto.'),
   isFeatured: Yup.boolean(),
   isRecommended: Yup.boolean(),
   availableColors: Yup.array()
     .of(Yup.string().required())
-    .min(1, 'Please add a default color for this product.')
+    .min(1, 'Agrega un  color por default para este producto.')
 });
 
 const ProductForm = ({ product, onSubmit, isLoading }) => {
@@ -84,7 +84,7 @@ const ProductForm = ({ product, onSubmit, isLoading }) => {
       });
     } else {
       // eslint-disable-next-line no-alert
-      alert('Product thumbnail image is required.');
+      alert('Imagen miniatura es requerida .');
     }
   };
 
@@ -105,7 +105,7 @@ const ProductForm = ({ product, onSubmit, isLoading }) => {
                     disabled={isLoading}
                     name="name"
                     type="text"
-                    label="* Product Name"
+                    label="* Nombre del Producto"
                     placeholder="Gago"
                     style={{ textTransform: 'capitalize' }}
                     component={CustomInput}
@@ -120,7 +120,7 @@ const ProductForm = ({ product, onSubmit, isLoading }) => {
                     options={brandOptions}
                     disabled={isLoading}
                     placeholder="Select/Create Brand"
-                    label="* Brand"
+                    label="* Marca"
                   />
                 </div>
               </div>
@@ -130,7 +130,7 @@ const ProductForm = ({ product, onSubmit, isLoading }) => {
                   name="description"
                   id="description"
                   rows={3}
-                  label="* Product Description"
+                  label="* Descripción del producto"
                   component={CustomTextarea}
                 />
               </div>
@@ -141,7 +141,7 @@ const ProductForm = ({ product, onSubmit, isLoading }) => {
                     name="price"
                     id="price"
                     type="number"
-                    label="* Price"
+                    label="* Precio"
                     component={CustomInput}
                   />
                 </div>
@@ -152,7 +152,7 @@ const ProductForm = ({ product, onSubmit, isLoading }) => {
                     name="maxQuantity"
                     type="number"
                     id="maxQuantity"
-                    label="* Max Quantity"
+                    label="* Max Cantidad"
                     component={CustomInput}
                   />
                 </div>
@@ -166,7 +166,7 @@ const ProductForm = ({ product, onSubmit, isLoading }) => {
                     isMulti
                     disabled={isLoading}
                     placeholder="Create/Select Keywords"
-                    label="* Keywords"
+                    label="* Palabras clave"
                   />
                 </div>
                 &nbsp;
@@ -179,7 +179,7 @@ const ProductForm = ({ product, onSubmit, isLoading }) => {
                     isMulti
                     disabled={isLoading}
                     placeholder="Create/Select Sizes"
-                    label="* Sizes (Millimeter)"
+                    label="* Tamañp (Millimetros)"
                   />
                 </div>
               </div>
@@ -191,7 +191,7 @@ const ProductForm = ({ product, onSubmit, isLoading }) => {
                 />
               </div>
               <div className="product-form-field">
-                <span className="d-block padding-s">Image Collection</span>
+                <span className="d-block padding-s">Selección de imagen</span>
                 {!isFileLoading && (
                   <label htmlFor="product-input-file-collection">
                     <input
@@ -203,7 +203,7 @@ const ProductForm = ({ product, onSubmit, isLoading }) => {
                       readOnly={isLoading}
                       type="file"
                     />
-                    Choose Images
+                    Selecciona imagen
                   </label>
                 )}
               </div>
@@ -222,7 +222,7 @@ const ProductForm = ({ product, onSubmit, isLoading }) => {
                         <button
                           className="product-form-delete-image"
                           onClick={() => removeImage({ id: image.id, name: 'imageCollection' })}
-                          title="Delete Image"
+                          title="Borra imagen"
                           type="button"
                         >
                           <i className="fa fa-times-circle" />
@@ -244,7 +244,7 @@ const ProductForm = ({ product, onSubmit, isLoading }) => {
                   />
                   <label htmlFor="featured">
                     <h5 className="d-flex-grow-1 margin-0">
-                      &nbsp; Add to Featured &nbsp;
+                      &nbsp; Agrega a Destacados &nbsp;
                     </h5>
                   </label>
                 </div>
@@ -258,7 +258,7 @@ const ProductForm = ({ product, onSubmit, isLoading }) => {
                   />
                   <label htmlFor="recommended">
                     <h5 className="d-flex-grow-1 margin-0">
-                      &nbsp; Add to Recommended &nbsp;
+                      &nbsp; Agrega a recomendados &nbsp;
                     </h5>
                   </label>
                 </div>
@@ -281,7 +281,7 @@ const ProductForm = ({ product, onSubmit, isLoading }) => {
             {/* ----THUBMNAIL ---- */}
             <div className="product-form-file">
               <div className="product-form-field">
-                <span className="d-block padding-s">* Thumbnail</span>
+                <span className="d-block padding-s">* Miniatura</span>
                 {!isFileLoading && (
                   <label htmlFor="product-input-file">
                     <input
@@ -292,7 +292,7 @@ const ProductForm = ({ product, onSubmit, isLoading }) => {
                       readOnly={isLoading}
                       type="file"
                     />
-                    Choose Image
+                    Selecciona Imagen
                   </label>
                 )}
               </div>

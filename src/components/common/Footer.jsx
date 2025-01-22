@@ -5,6 +5,7 @@ import { useLocation } from 'react-router-dom';
 
 const Footer = () => {
   const { pathname } = useLocation();
+  const logoPath = import.meta.env.VITE_LOGO_PATH;
 
   const visibleOnlyPath = [
     Route.HOME,
@@ -18,12 +19,12 @@ const Footer = () => {
           <span>
             Developed by
             {' '}
-            <a href="https://github.com/jgudo">JULIUS GUEVARRA</a>
+            <a href="https://github.com/Mijaco/constantina">Samay SAC</a>
           </span>
         </strong>
       </div>
       <div className="footer-col-2">
-        <img alt="Footer logo" className="footer-logo" src={logo} />
+        <img alt="Footer logo" className="footer-logo" src={logoPath} />
         <h5>
           &copy;&nbsp;
           {new Date().getFullYear()}
@@ -33,7 +34,7 @@ const Footer = () => {
         <strong>
           <span>
             Fork this project &nbsp;
-            <a href="https://github.com/jgudo/ecommerce-react">HERE</a>
+            <a href="https://github.com/Mijaco/constantina">HERE</a>
           </span>
         </strong>
       </div>

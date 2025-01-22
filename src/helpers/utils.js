@@ -18,11 +18,12 @@ export const displayDate = (timestamp) => {
 export const displayMoney = (n) => {
   const format = new Intl.NumberFormat('en-US', {
     style: 'currency',
-    currency: 'USD'
+    currency: 'PEN',
+    minimumFractionDigits: 2
   });
 
-  // or use toLocaleString()
-  return format.format(n);
+  // Replace PEN symbol with S/ using string replacement
+  return format.format(n).replace('PEN', 'S/');
 };
 
 export const calculateTotal = (arr) => {

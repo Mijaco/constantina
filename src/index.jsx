@@ -18,6 +18,20 @@ WebFont.load({
 
 const { store, persistor } = configureStore();
 const root = document.getElementById('app');
+const whatsappNumber = import.meta.env.VITE_WSTP_NRO;
+const whatsappMessage = import.meta.env.VITE_WSTP_MESSAGE;
+const whatsappLink = `https://wa.me/51${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+const businesstitle = 'Samay | Home';
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const whatsappAnchor = document.getElementById('whatsapp-link');
+  if (whatsappAnchor) {
+    console.log ("whatsappLink" + whatsappLink)
+    whatsappAnchor.href = whatsappLink;
+  }
+});
 
 // Render the preloader on initial load
 render(<Preloader />, root);
@@ -32,7 +46,7 @@ firebase.auth.onAuthStateChanged((user) => {
   render(<App store={store} persistor={persistor} />, root);
 });
 
-
+console.log("whatsappMessage:" + whatsappMessage)
 
 if (process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator) {
   window.addEventListener('load', () => {
