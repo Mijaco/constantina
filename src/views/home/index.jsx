@@ -39,11 +39,11 @@ const Home = () => {
           <div className="banner-desc">
             <h1 className="text-thin">
               <strong>Full descuento</strong>
-              &nbsp;en esta &nbsp;
-              <strong>Navidad</strong>
+              &nbsp;por el mes del &nbsp;
+              <strong>Amor</strong>
             </h1>
             <p>
-              Lleva los mejores lentes oftalmológicos y gafas de sol de tus marcas favoritas, a descuento único, solo por la semana navideña
+              Lleva los mejores lentes oftalmológicos y gafas de sol de tus marcas favoritas, a descuento único, solo por el mes del amor
             </p>
             <br />
             <Link to={SHOP} className="button">
